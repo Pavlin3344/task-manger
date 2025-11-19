@@ -1,0 +1,15 @@
+services:
+  app:
+    image: task-manger
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - "5000:5000"
+
+    volumes:
+      - tasks_data:/app
+    restart: unless-stopped
+volumes:
+  tasks_data:
